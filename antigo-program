@@ -1,0 +1,558 @@
+// int numero1 = 5;
+// int numero2 = 1;
+
+// Console.WriteLine("Soma");
+// Console.WriteLine(numero1 + numero2);
+// Console.WriteLine("Subtração");
+// Console.WriteLine(numero1 - numero2);
+// Console.WriteLine("Multiplicação");
+// Console.WriteLine(numero1 * numero2);
+// Console.WriteLine("Divisão");
+// Console.WriteLine(numero1 / numero2);
+// Console.WriteLine("Módulo");
+// Console.WriteLine(numero1 % numero2);
+
+//Primeiro é resolvido a multiplicação e divisão e depois a soma 
+//e subtração, caso queira uma ordem especifica, deve deixar claro 
+//isso, usando parênteses
+
+// double a = 10;
+// double b = 5;
+// double c = 2;
+// double d = 3;
+
+// double result = a + b * c / d;
+// Console.WriteLine("Resultado sem parênteses: " + result);
+
+// result = (a + b) * c / d;
+// Console.WriteLine("Resultado com parênteses: " + result);
+
+//-------------------------------------------------------------------
+
+//Operação de atribuição
+
+// double a = 10;
+
+// Console.WriteLine("Resultado: " + a);
+
+// a += 3;
+// Console.WriteLine("Resultado: " + a);
+
+// a -= 3;
+// Console.WriteLine("Resultado: " + a);
+
+// a *= 3;
+// Console.WriteLine("Resultado: " + a);
+
+// a /= 3;
+// Console.WriteLine("Resultado: " + a);
+
+// a %= 3;
+// Console.WriteLine("Resultado: " + a);
+
+//-------------------------------------------------------------------
+
+//inclemento e declemento
+
+// double a = 10;
+
+// Console.WriteLine("Resultado: " + a);
+
+// a++;
+// Console.WriteLine("Resultado: " + a);
+
+// a--;
+// Console.WriteLine("Resultado: " + a);
+
+//-------------------------------------------------------------------
+
+// operador de igualdade
+
+// int a = 5;
+// int b = 5;
+
+// bool saoIguais = a == b;
+//outros casos
+// != diferente
+// >= maior ou igual
+// <= menor ou igual
+
+// Console.WriteLine(saoIguais);
+
+//-------------------------------------------------------------------
+
+//Operador Lógico 
+//"E"
+//só vai ser valido se ambas as condições foram seguidas/válidas
+
+// bool usuarioValido = true;
+// bool senhaValida = true;
+
+// bool resultado = usuarioValido && senhaValida;
+
+//"OU"
+//será válido se uma das condições forem seguidas
+// bool resultado = usuarioValido || senhaValida;
+
+//"NÃO" ou "NEGAÇÃO"
+//essa condição pergunta se o valor não é válido
+//ex: var = true, e"usuarioValido, a resposta é false, se o var= false, rsposta true
+
+// bool resultado = !usuarioValido && senhaValida;
+
+// Console.WriteLine(resultado);
+
+//-------------------------------------------------------------------
+
+//Condições
+//if else
+
+// Console.Write("Digite sua idade: ");
+// int idade = int.Parse(Console.ReadLine());
+
+
+// if (idade <= 0) {
+//     Console.WriteLine("Idade inválida!");
+// } else if (idade >= 18) {
+//     Console.WriteLine("Acesso Autorizado!");
+// } else {
+//     Console.Write("Possui permissão dos pais? (s/n): ");
+//     string resposta = Console.ReadLine();
+
+//     if (resposta.ToLower() == "s") 
+//     {
+//         Console.WriteLine("Acesso permitido com a permissão dos pais");
+//     } 
+//     else 
+//     {
+//         Console.WriteLine("Acesso Negado");
+//     }
+// }
+
+//Condições
+//While (switch)
+
+// Console.Write("Dígite um número de 1 a 7 para saber o dia da semana correspondente: ");
+// string input = Console.ReadLine();
+
+// switch (input)
+// {
+//     case "1":
+//         Console.WriteLine("Domingo");
+//         break;
+//     case "2":
+//         Console.WriteLine("Segunda-feira");
+//         break;
+//     case "3":
+//         Console.WriteLine("Terça-feira");
+//         break;
+//     case "4":
+//         Console.WriteLine("Quarta-feira");
+//         break;
+//     case "5":
+//         Console.WriteLine("Quinta-feira");
+//         break;
+//     case "6":
+//         Console.WriteLine("Sexta-feira");
+//         break;
+//     case "7":
+//         Console.WriteLine("Sábado");
+//         break;
+//     default:
+//         Console.Write("Número inválido. Por favor digite um número entre 1 a 7.");
+//         break;
+// }
+
+//-------------------------------------------------------------------
+
+//Constante -> regra para variavel, para que assim que receber um valor o mesmo não seja alterado
+
+// const double TAXA_DESCONTO = 0.10, TAXA_IMPOSTO = 0.15;
+
+// double precoOriginal = 150.0;
+
+// //Cálculo do preço com imposto
+// double precoComImposto = precoOriginal + (precoOriginal * TAXA_IMPOSTO);
+
+// //Cálculo de preço final com desconto após o imposto
+// double precoFinal = precoComImposto - (precoComImposto * TAXA_DESCONTO);
+
+// Console.WriteLine("O preço original é: " + precoOriginal);
+// Console.WriteLine("O preço com imposto é: " + precoComImposto);
+// Console.WriteLine("O preço com desconto após imposto é: " + precoFinal);
+
+//-------------------------------------------------------------------
+
+//laços de repetição
+
+// //while
+// int i = 0;
+
+// //nesse caso tem a verificação antes
+// while (i < 5){
+//     Console.WriteLine($"i = {i}");
+//     i++;
+// }
+
+// //no caos abaixo, ele executa primeiro e verifica depois
+// do
+// {
+//     Console.WriteLine($"i = {i}");
+//     i++;
+// } while (i < 5)
+
+//FOR
+//Estrutura do for, primeiro defini o valor, segundo até quando vai seguir(condição), e por ultimo aumentar ou diminuir(inclemento e declemento)
+
+// for (int i = 0; i <5; i++){
+//     Console.WriteLine($"i = {i}");
+// }
+
+//-------------------------------------------------------------------
+
+//DATA
+//EX1 - Obter Data e Hora atual
+// DateTime dataAtual = DateTime.Now;
+
+// Console.WriteLine("Data e Hora Atual: " + dataAtual);
+
+//EX 2 - Calcular a diferença em dias entre duas datas
+
+// DateTime dataInicial = DateTime.Now;
+// DateTime dataFinal = dataInicial.AddMonths(1);
+// TimeSpan diferenca = dataFinal - dataInicial;
+
+// Console.WriteLine("Data Inicial: " + dataInicial);
+// Console.WriteLine("Data Final: " + dataFinal);
+// Console.WriteLine("Diferença : " + diferenca.Days);
+
+//EX 3 - Obter dia da semana
+// DateTime dataAtual = DateTime.Now;
+
+// Console.WriteLine("Hoje é: " + dataAtual.DayOfWeek);
+
+//EX 4 - Comparar Duas Datas
+// DateTime dataInicial = DateTime.Now;
+// DateTime dataFinal = DateTime.Now;
+
+// Console.WriteLine("Data Inicial: " + dataInicial);
+// Console.WriteLine("Data Final: " + dataFinal);
+// Console.WriteLine("");
+
+// if(dataInicial < dataFinal){
+//     Console.WriteLine("a data inicial é menor do que a data atual.");
+// } else if(dataInicial > dataFinal){
+//     Console.WriteLine("a data inicial é maior do que a data atual.");
+// } else{
+//     Console.WriteLine("As datas são iguais.");
+// }
+//OBS: se colocar ambas como now, não vão ser iguais, pois o tempo continua correndo e dá diferença no milissegundo
+
+//EX 5 - Formatar a data usando máscara
+// DateTime dataAtual = DateTime.Now;
+
+// string dataFormatada = dataAtual.ToString("dd/MM/yyyy HH:mm:ss.fffffff");
+
+// Console.WriteLine("Data Formatada" + dataFormatada);
+
+//------------------------------------------------------------------------
+
+//Enumerados (ENUMS)
+
+// DiasDaSemana dia = DiasDaSemana.Segunda;
+// // int dia = (int)DiasDaSemana.Segunda;
+
+// Console.WriteLine(dia);
+// Console.WriteLine((int)dia);
+
+// enum DiasDaSemana{
+//     Domingo,
+//     Segunda,
+//     Terca,
+//     Quarta,
+//     Quinta,
+//     Sexta,
+//     Sabado
+// }
+
+// StatusPedido statusPedido = StatusPedido.Aprovado;
+
+// switch (statusPedido){
+//     case StatusPedido.Aprovado:
+//         Console.WriteLine("O pedido foi Aprovado");
+//         break;
+//     case StatusPedido.Cancelado:
+//         Console.WriteLine("O pedido foi Cancelado");
+//         break;    
+// }
+    
+// enum StatusPedido{
+//     Aprovado,
+//     Cancelado
+// }
+
+//-------------------------------------------------------------------------------
+
+//Tuple - Tuplas
+// var cadastro = Tuple.Create(1, "Thiago");
+// //na criação pode simplificar para = (1, "Thiago"), sem precisar declarar Tuple
+// //Suporta até 8 valores
+
+// //Pode nomear a variavel:
+// //ex 1 -> var cadastro = (Codigo: 1, Nome: "Thiago")
+// //ex 2 -> var (Codigo, Nome) = (1, "Thiago")
+// //ex 3 -> (int, string) cadastro = (1, "Thiago")
+
+// //EX 1
+// // Console.WriteLine(cadastro.Codigo);
+// // Console.WriteLine(cadastro.Nome);
+
+// //EX 2
+// // Console.WriteLine(Codigo);
+// // Console.WriteLine(Nome);
+
+// //
+
+// Console.WriteLine(cadastro.Item1);
+// Console.WriteLine(cadastro.Item2);
+
+//-------------------------------------------------------------------------------
+
+//Matrizes
+
+// //string[,] -> sem virgula é uma coluna, uma virgula duas coluna, e assim vai indo
+// //new string[3,2] -> primeiro valor quantidade de linhas, segundo quantidade de coluna
+
+// //Primeira forma de declarar:
+// // string[,] pessoas = new string[3,2];
+
+// // pessoas[0,0] = "Thiago";
+// // pessoas[0,1] = "03/08/1991";
+// // pessoas[0,2] = "Masculino";
+
+// // pessoas[0,0] = "Vanessa";
+// // pessoas[0,1] = "21/04/1992";
+// // pessoas[0,2] = "Feminino";
+
+// // pessoas[0,0] = "Fernanda";
+// // pessoas[0,1] = "23/10/2001";
+// // pessoas[0,2] = "Feminino";
+
+// //Segunda forma de declarar
+// string[,] pessoas = {
+//     {"Thiago", "03/08/1991", "Masculino"},
+//     {"Vanessa", "21/04/1992", "Feminino"},
+//     {"Fernanda", "23/10/2001", "Feminino"}
+// };
+
+// // Console.WriteLine(pessoas[0,0]);
+// // Console.WriteLine(pessoas[0,1]);
+// // Console.WriteLine(pessoas[0,2]);
+
+// for (int i = 0; i < pessoas.GetLength(0); i++){
+//     for (int j = 0; j < pessoas.GetLength(1); j++){
+//         Console.WriteLine(pessoas[i, j]);
+//     }
+//     Console.WriteLine();
+// }
+
+//-------------------------------------------------------------------------------
+
+//Listas
+
+// //Criando e iniciando com valores
+// List<string> frutas = new List<string>() {"Maça", "Banana", "Melão"};
+
+// List<string> frutas = new List<string>();
+
+// //Adicionando itens
+// frutas.Add("Maça");
+// frutas.Add("Banana");
+// frutas.Add("Melão");
+
+// // //Remoção de intens
+// // //por valor
+// // frutas.Remove("Melão");
+// // //ou por indice
+// // frutas.RemoveAt(0);
+
+// // Console.WriteLine(frutas[0]);
+
+// foreach (string fruta in frutas){
+//     Console.WriteLine(fruta);
+// }
+
+// Console.WriteLine();
+
+// Console.WriteLine("Outros Consoles");
+// Console.WriteLine(frutas.Count);
+// Console.WriteLine(frutas.IndexOf("Maça"));
+// Console.WriteLine(frutas.IndexOf("Abacaxi"));
+// Console.WriteLine(frutas.Contains("Maça"));
+// Console.WriteLine(frutas.Contains("Abacaxi"));
+
+//-------------------------------------------------------------------------------
+
+//Vetores
+
+// //primeira forma de declarar
+// // int[] pessoas = new int[3];
+// // pessoas[0] = 45;
+// // pessoas[1] = 987;
+// // pessoas[2] = 5;
+
+// //Segunda forma
+// int[] pessoas = {15, 78, 12, 987, 1};
+
+// //forma adicional, a partir do c# 12
+// //ao inves de definir o tamanho e depois os valores, pode definir os valores diretamente na criação
+// //int[] pessoas = [3, 45, 5452, 2];
+
+// for (int i = 0; i < pessoas.Length; i++){
+//     Console.WriteLine(pessoas[i]);
+// }
+
+//-------------------------------------------------------------------------------
+
+//OU exclusivo (XOR)
+// var option1 = true;
+// var option2 = false;
+// var option3 = false;
+
+// // //forma original
+
+// // if ((option1 && !option2 && !option3) ||
+// //     (!option1 && option2 && !option3) ||
+// //     (!option1 && !option2 && option3))
+// // {
+// //     Console.WriteLine("Exatamente uma opção é verdadeira");
+// // }else{
+// //     Console.WriteLine("Nenhuma verdadeira ou mais de uma verdadeira");
+// // }
+
+// //forma reduzida usando XOR
+
+// if (option1 ^ option2 ^ option3)
+// {
+//     Console.WriteLine("Exatamente uma opção é verdadeira");
+// }else{
+//     Console.WriteLine("Nenhuma ou mais de uma verdadeira");
+// }
+
+//-------------------------------------------------------------------------------
+
+//Método
+//uma forma de reaproveitar um bloco de código
+ 
+// // //forma normal
+// // static void DizerOla() {
+// // Console.WriteLine("Ola Mundo");
+// // }
+
+// //forma simplificada
+// static void DizerOla() => Console.WriteLine("Ola Mundo");
+
+// DizerOla();
+
+// // //forma normal
+// // static void DizerOla(string nome) {
+// //  Console.WriteLine($"Olá, {nome}");
+// // }
+
+// //forma simplificada
+// static void DizerOlaEsp(string nome) => Console.WriteLine($"Olá, {nome}");
+
+// DizerOlaEsp("Pedro");
+
+
+// // //forma normal
+// // static int Somar(int a, int b)
+// // {
+// //     return a + b;
+// // }
+
+// //forma simplificada
+// static int Somar(int a, int b) => a + b;
+
+// var resultado = Somar(5, 7);
+
+// Console.WriteLine($"Resultado da soma: {resultado}");
+
+//-------------------------------------------------------------------------------
+//Dicionario
+
+// // Exemplo com int e string
+// // var alunos = new Dictionary<int, string>();
+// // alunos.Add(1, "Thiago");
+// // alunos.Add(2, "Vanessa");
+// // alunos.Add(3, "Antonio");
+// // Console.WriteLine(alunos[3]);
+
+// //Exemplo com string e string
+
+// //Forma 1 de escrever
+// // var palavras = new Dictionary<string, string>();
+// // palavras.Add("Palavra 1", "Significado 1");
+// // palavras.Add("Palavra 2", "Significado 2");
+// // palavras.Add("Palavra 3", "Significado 3");
+
+// //forma 2 de escrever (simplificada)
+// var palavras = new Dictionary<string, string>
+// {
+//     { "Palavra 1", "Significado 1" },
+//     { "Palavra 2", "Significado 2" },
+//     { "Palavra 3", "Significado 3" }
+// };
+
+// //Quando quiser ver se a chave já foi criada
+// // if(palavras.ContainsKey("Palavra 3"))
+// //     Console.WriteLine("Chave 'Palavra 3' já exista no dicionário");
+
+// //Quando quiser ver se a chave já foi criada e também definir um novo valor a ela
+// // if(palavras.ContainsKey("Palavra 3"))
+// //     palavras["Palavra 3"] = "Significado 3 Atualizado";
+// //     Console.WriteLine("Chave 'Palavra 3' já exista no dicionário");
+
+// // Console.WriteLine(palavras["Palavra 3"]);
+
+// //mostrar todos os valores do dicionário
+// foreach (var palavra in palavras)
+// {
+//     Console.WriteLine($"ID: {palavra.Key}, Nome: {palavra.Value}");
+// }
+
+//-------------------------------------------------------------------------------
+
+//Range Operator
+//                  [0] [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12]
+// List<int> numeros = [23, 31, 17, 56, 98, 2, 107, 34, 99, 87, 78, 278, 145];
+
+// Console.Write("Lista Completa: ");
+// Console.WriteLine(string.Join(", ", numeros));
+
+// Console.Write("Do nono elemento até o último: ");
+// Console.WriteLine(string.Join(", ", numeros[8..]));
+
+// Console.Write("Do primeiro até o nono elemento: ");
+// Console.WriteLine(string.Join(", ", numeros[0..9])); //ou [..9]
+
+// Console.Write("Do quarto elemento até o oitavo elemento: ");
+// Console.WriteLine(string.Join(", ", numeros[3..8]));
+
+// Console.Write("Último elemento: ");
+// Console.WriteLine(string.Join(", ", numeros[^1])); //^ => começe de trás para frente
+
+// Console.Write("Do primeiro até o penúltimo elemento: ");
+// Console.WriteLine(string.Join(", ", numeros[..^1])); 
+
+// Console.Write("Do primeiro até o antepenúltimo elemento: ");
+// Console.WriteLine(string.Join(", ", numeros[..^2])); 
+
+// Console.Write("Os trê últimos elementos: ");
+// Console.WriteLine(string.Join(", ", numeros[^3..])); 
+
+// Console.Write("Do quinto elementos até o antepenúltimo: ");
+// Console.WriteLine(string.Join(", ", numeros[4..^2])); 
+
+
+//-------------------------------------------------------------------------------

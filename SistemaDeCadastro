@@ -1,0 +1,138 @@
+using System;
+using System.Collections.Generic;
+
+List<Cliente> clientes = new List<Cliente>();
+
+while (true)
+{
+    Console.WriteLine("\n=== SISTEMA DE CLIENTES ===");
+    Console.WriteLine("1 - Cadastrar Cliente");
+    Console.WriteLine("2 - Listar Clientes");
+    Console.WriteLine("3 - Buscar Cliente");
+    Console.WriteLine("4 - Remover Cliente");
+    Console.WriteLine("5 - Sair");
+
+    //usava isso, mas mudei por conta de => Console.ReadLine() — o ReadLine() pode retornar null, e o int.Parse() não aceita null. Resolve com TryParse
+    //int opcao = int.Parse(Console.ReadLine());
+
+    if (!int.TryParse(Console.ReadLine(), out int opcao))
+    {
+        Console.WriteLine("Digite apenas números!");
+        continue; // volta pro início do while
+    }
+
+    switch (opcao)
+    {
+        case 1:
+            CadastrarCliente(clientes);
+            break;
+
+        case 2:
+            ListarClientes(clientes);
+            break;
+        
+        case 3:
+            BuscarCliente(clientes);
+            break;
+
+        case 4:
+            RemoverCliente(clientes);
+            break;
+        
+        case 5:
+            Console.WriteLine("Encerrando sistema...");
+            return;
+
+        default:
+            Console.WriteLine("Opção inválida!");
+            break;
+    }
+}
+
+static void CadastrarCliente(List<Cliente> clientes)
+{
+    Cliente novoCliente = new Cliente();
+
+    Console.Write("Nome: ");
+    novoCliente.Nome = Console.ReadLine() ?? string.Empty;
+
+    Console.Write("Idade: ");
+    if (!int.TryParse(Console.ReadLine(), out int idade))
+    {
+        Console.WriteLine("Erro => Idade inválida! Cliente não cadastrado.");
+        return;
+    }
+    novoCliente.Idade = idade;
+
+    Console.Write("Email: ");
+    novoCliente.Email = Console.ReadLine() ?? string.Empty;
+
+    clientes.Add(novoCliente);
+
+    Console.WriteLine("\nCliente Cadastrado com sucesso!");
+}
+
+static void ListarClientes(List<Cliente> clientes)
+{
+    if (clientes.Count == 0)
+    {
+        Console.WriteLine("Nenhum cliente cadastrado.");
+        return;
+    }
+
+    for (int i = 0; i < clientes.Count; i++)
+    {
+        Console.WriteLine($"\n--- Dados do Cliente [{i + 1}] ---");
+        Console.WriteLine($"Nome: {clientes[i].Nome}");
+        Console.WriteLine($"Idade: {clientes[i].Idade}");
+        Console.WriteLine($"Email: {clientes[i].Email}");
+    }
+}
+
+
+static void BuscarCliente(List<Cliente> clientes)
+{
+    Console.WriteLine("Digite o nome: ");
+    string nome = Console.ReadLine() ?? string.Empty;
+
+    foreach (var cliente in clientes)
+    {
+        if (cliente.Nome == nome)
+        {
+            Console.WriteLine("--- Informações do cliente encontrada ---");
+            Console.WriteLine(cliente.Nome);
+            Console.WriteLine(cliente.Idade);
+            Console.WriteLine(cliente.Email);
+            return;
+        }
+    }
+
+    Console.WriteLine("Cliente não encontrado.");
+}
+
+static void RemoverCliente(List<Cliente> clientes)
+{
+    Console.WriteLine("Digite o nome para remover: ");
+    string nome = Console.ReadLine() ?? string.Empty;
+
+    // ✅ Busca o cliente na lista pelo nome
+    Cliente? clienteRemover = clientes.Find(c => c.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
+
+    if (clienteRemover != null)
+    {
+        clientes.Remove(clienteRemover);
+        Console.WriteLine("Cliente Removido");
+    }
+    else
+    {
+        Console.WriteLine("Cliente não encontrado");
+    }
+    
+}
+
+class Cliente
+{
+    public string Nome { get; set; } = string.Empty;
+    public int Idade { get; set; }
+    public string Email { get; set; } = string.Empty;
+}
